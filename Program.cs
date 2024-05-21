@@ -25,4 +25,3 @@ if (int.TryParse(numero, out n))
 
 Console.WriteLine("Numero original:" + numero);
 Console.WriteLine("Numero invertido:" + invertido);
-
