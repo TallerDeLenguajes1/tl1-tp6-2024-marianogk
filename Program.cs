@@ -1,27 +1,48 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-int n, invertido=0, digito;
+// Ejercicio 2
 
-Console.WriteLine("Ingrese un numero");
-string numero = Console.ReadLine();
+int seguir = 0;
 
-
-if (int.TryParse(numero, out n))
+do
 {
-    n = Convert.ToInt32(numero);
+    Console.WriteLine("Elija la opcion:");
+    Console.WriteLine("1.Sumar");
+    Console.WriteLine("2.Restar");
+    Console.WriteLine("3.Multiplicar");
+    Console.WriteLine("4.Dividir");
+    int opcion = int.Parse(Console.ReadLine());
 
-    while (n > 0)
+    Console.WriteLine("Ingrese dos numeros:");
+    Console.WriteLine("Nro 1:");
+    int n1 = int.Parse(Console.ReadLine());
+    Console.WriteLine("Nro 2:");
+    int n2 = int.Parse(Console.ReadLine());
+    switch (opcion)
     {
-        // Obtener el último dígito del número
-        digito = n % 10;
+        case 1:
+            int suma = n1 + n2;
+            Console.WriteLine("Suma = " + suma);
+            break;
+        case 2:
+            int resta = n1 - n2;
+            Console.WriteLine("Resta = " + resta);
+            break;
+        case 3:
+            int multi = n1 * n2;
+            Console.WriteLine("Multiplicacion = " + multi);
+            break;
+        case 4:
+            float division = (float)n1 / n2;
+            Console.WriteLine("Division = " + division);
+            break;
 
-        // Agregar el dígito al número invertido
-        invertido = invertido * 10 + digito;
-
-        // Eliminar el último dígito del número original
-        n /= 10;
+        default:
+            Console.WriteLine("Opcion incorrecta");
+            break;
     }
-}
+    Console.WriteLine("Realizar otra operacion? :  1. Si  2. No");
+    seguir = int.Parse(Console.ReadLine());
 
-Console.WriteLine("Numero original:" + numero);
-Console.WriteLine("Numero invertido:" + invertido);
+
+} while (seguir == 1);
