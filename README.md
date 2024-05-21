@@ -1,1 +1,2 @@
 # tl1-tp6-2024-marianogk
+Mariano Garcia
