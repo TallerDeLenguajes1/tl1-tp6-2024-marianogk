@@ -1,27 +1,39 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-int n, invertido=0, digito;
+// Ejercicio 3
 
-Console.WriteLine("Ingrese un numero");
-string numero = Console.ReadLine();
+Console.WriteLine("Ingrese un numero: ");
 
+double nro = double.Parse(Console.ReadLine());
 
-if (int.TryParse(numero, out n))
+Console.WriteLine("Numero: " + nro);
+double abs = nro;
+if (abs < 0) abs = -abs;
+Console.WriteLine("\nValor absoluto: " + abs);
+double cuadrado = nro * nro;
+Console.WriteLine("\nCuadrado: " + cuadrado);
+double raiz = Math.Sqrt(nro);
+Console.WriteLine("\nRaiz cuadrada: " + raiz);
+double seno = Math.Sin(nro);
+Console.WriteLine("\nSeno: " + seno);
+double coseno = Math.Cos(nro);
+Console.WriteLine("\nCoseno: " + coseno);
+int entero = (int)nro;
+Console.WriteLine("\nParte entera: " + entero);
+
+Console.WriteLine("\nIngrese dos numeros:");
+Console.WriteLine("Nro 1:");
+int n1 = int.Parse(Console.ReadLine());
+Console.WriteLine("Nro 2:");
+int n2 = int.Parse(Console.ReadLine());
+
+if (n1 >= n2)
 {
-    n = Convert.ToInt32(numero);
-
-    while (n > 0)
-    {
-        // Obtener el último dígito del número
-        digito = n % 10;
-
-        // Agregar el dígito al número invertido
-        invertido = invertido * 10 + digito;
-
-        // Eliminar el último dígito del número original
-        n /= 10;
-    }
+    Console.WriteLine("\nEl maximo es: " + n1);
+    Console.WriteLine("El minimo es: " + n2);
 }
-
-Console.WriteLine("Numero original:" + numero);
-Console.WriteLine("Numero invertido:" + invertido);
+else
+{
+    Console.WriteLine("\nEl maximo es: " + n1);
+    Console.WriteLine("El minimo es: " + n2);
+}
